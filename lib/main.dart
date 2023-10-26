@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/pages/home_page.dart';
+import 'package:quiz_app/pages/quiz_page.dart';
+import 'package:quiz_app/pages/review_quiz_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,6 +19,11 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
           useMaterial3: true,
         ),
-        home: const HomePage());
+        initialRoute: "/",
+        routes: {
+          "/": (context) => const HomePage(),
+          "/quiz-page": (context) => const QuizPage(),
+          "/review-page": (context) => const ReviewQuizPage(),
+        });
   }
 }

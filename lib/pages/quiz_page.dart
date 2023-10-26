@@ -1,14 +1,41 @@
 import 'package:flutter/material.dart';
 
-class QuizPage extends StatelessWidget {
+class QuizPage extends StatefulWidget {
   const QuizPage({super.key});
 
   @override
+  State<QuizPage> createState() => _QuizPageState();
+}
+
+class _QuizPageState extends State<QuizPage> {
+  @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text("Quiz Page"),
-      ),
-    );
+    return Scaffold(
+        backgroundColor: Colors.indigo,
+        appBar: AppBar(
+          title: const Text("Quiz de Capitales"),
+          backgroundColor: Colors.indigo,
+          elevation: 0,
+        ),
+        body: Column(
+          children: [
+            Container(
+              margin: const EdgeInsets.symmetric(horizontal: 30),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(15),
+                child: LinearProgressIndicator(
+                  color: Colors.amber.shade900,
+                  value: .5,
+                  minHeight: 20,
+                ),
+              ),
+            ),
+            Container(),
+            TextButton(
+              onPressed: () {},
+              child: const Text("Skip"),
+            )
+          ],
+        ));
   }
 }
